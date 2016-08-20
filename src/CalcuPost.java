@@ -26,10 +26,6 @@ public class CalcuPost implements I_Calculadora
 	}
 	@Override
  	public int Calcular(String vector) {
-		/**
-		 * un if , si MiLista = null --> DESDE ACA
-         */
-
 		if(MiLista == null) {
 
 			// TODO Auto-generated method stub
@@ -79,7 +75,8 @@ public class CalcuPost implements I_Calculadora
 				}
 			}
 			/**
-			 * HASTA ACA, (HACER QUE FUNCIONE CON LISTA, NO STACK)
+			 * HASTA ACA, (HACER QUE FUNCIONE CON LISTA, NO STACk
+			 *
 			 */
 		}
 		else {

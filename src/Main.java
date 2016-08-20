@@ -49,7 +49,7 @@ public class Main {
 
         }
 
-		I_Calculadora calcu= new Calculadora(stackOrList, tipoImplemetacion);
+		I_Calculadora calcu= new CalcuPost(stackOrList, tipoImplemetacion);
 		//String cadena= "8 2 / 2 + 3 -";
 		
 		String cadena= calcu.LeerArchivo("datos.txt");
