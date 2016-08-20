@@ -25,4 +25,6 @@ public interface I_Calculadora
 	 */
 	public String toString();
 
+
+	void calculadora(String stackOrList, String tipoImplemetacion);
 }

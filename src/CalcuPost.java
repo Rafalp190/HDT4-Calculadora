@@ -13,7 +13,7 @@ public class CalcuPost implements I_Calculadora
 
 
 
-	public void Calculadora(String tipo, String implementacion) {
+	public void calculadora(String tipo, String implementacion) {
 		if(tipo.equalsIgnoreCase("LISTA")){
 			AbstractFactory listFactory = FactoryProducer.getFactory(tipo);
 			this.MiLista = listFactory.getLista(implementacion);
@@ -81,7 +81,7 @@ public class CalcuPost implements I_Calculadora
 		}
 		else {
 			/**
-			 * ask rafa what goes
+			 * ask rafa what goes here
              */
 		}
 		return resultado;

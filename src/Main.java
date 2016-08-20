@@ -8,11 +8,9 @@ import java.util.Scanner;
 public class Main {
 
 
-
-	public static void main(String []args)
-	{
-	    //---------------------------------------------------------
-	    String stackOrList = "";
+    public static void main(String[] args) {
+        //---------------------------------------------------------
+        String stackOrList = "";
         String tipoImplemetacion = "";
         //---------------------------------------------------------
         /**
@@ -23,7 +21,7 @@ public class Main {
 
 
         //user input, invalid input will keep cicle going
-        while (stackOrList != "LISTA" && stackOrList != "STACK"){
+        while (!(stackOrList.equalsIgnoreCase("LISTA")) && !(stackOrList.equalsIgnoreCase("STACK"))) {
             //Instructions
             System.out.println("Ingrese solamente 'LISTA' o 'STACK' para comenzar");
 
@@ -32,30 +30,33 @@ public class Main {
 
         }
 
-        if (stackOrList == "LISTA"){
+        if (stackOrList.equalsIgnoreCase("lista")) {
             // if the type of sorting is "LISTA"
             System.out.println("Ingrese el tipo de lista: Simple o circular");
+            tipoImplemetacion = scan.next().toUpperCase();
 
-            while (tipoImplemetacion != "SIMPLE" && tipoImplemetacion != "CIRCULAR")
+            while (!(tipoImplemetacion.equalsIgnoreCase("SIMPLE")) && !(tipoImplemetacion.equalsIgnoreCase("CIRCULAR"))) {
                 System.out.println("Ingrese 'simple' o 'circular'");
                 tipoImplemetacion = scan.next().toUpperCase();
-        }
-        else{
-            while (tipoImplemetacion != "ARRAY" && tipoImplemetacion != "VECTOR") {
+            }
+        } else {
+            while (!(tipoImplemetacion.equalsIgnoreCase("ARRAY")) && !(tipoImplemetacion.equalsIgnoreCase("VECTOR"))) {
                 // if the type of sorting is "STACK"
                 System.out.println("Ingrese el tipo de stack: 'array' o 'vector'");
                 tipoImplemetacion = scan.next().toUpperCase();
+
+
             }
 
+            I_Calculadora newCalcu = new CalcuPost();
+            newCalcu.calculadora(stackOrList, tipoImplemetacion);
+            //String cadena= "8 2 / 2 + 3 -";
+
+            String cadena = newCalcu.LeerArchivo("datos.txt");
+            newCalcu.Calcular(cadena);
+            System.out.println(newCalcu.toString());
         }
 
-		I_Calculadora calcu= new CalcuPost(stackOrList, tipoImplemetacion);
-		//String cadena= "8 2 / 2 + 3 -";
-		
-		String cadena= calcu.LeerArchivo("datos.txt");
-		calcu.Calcular(cadena);
-		System.out.println(calcu.toString());
-	}
 
-	
+    }
 }
