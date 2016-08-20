@@ -28,26 +28,24 @@ public void addFirst(E value)
 public void addLast(E value)
 // pre: value is not null
 // post: adds new value to tail of list
-{
-   // construct new element
-   tail = new DoublyLinkedNode<E>(value, null, tail);
-   // fix up head
-   if (head == null) head = tail;
-   count++;
-}
-
-
-public E removeLast()
-// pre: list is not empty
-// post: removes value from tail of list
-{
-   DoublyLinkedNode<E> temp = tail;
-   tail = tail.previous();
-   if (tail == null) {
-       head = null;
-   } else {
-       tail.setNext(null);
+   {
+      // construct new element
+      tail = new DoublyLinkedNode<E>(value, null, tail);
+      // fix up head
+      if (head == null) head = tail;
+      count++;
    }
-   count--;
-   return temp.value();
-}}
+
+   @Override
+   public E removeLast() {
+      DoublyLinkedNode<E> temp = tail;
+      tail = tail.previous();
+      if (tail == null) {
+         head = null;
+      } else {
+         tail.setNext(null);
+      }
+      count--;
+      return temp.value();
+   }
+}

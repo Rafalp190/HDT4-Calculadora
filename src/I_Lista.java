@@ -16,6 +16,10 @@ public interface I_Lista<E>
    public void clear();
    // post: empties list
 
+   /**
+    *
+    * @param value
+     */
    public void addFirst(E value);
    // post: value is added to beginning of list
 
